@@ -2,7 +2,7 @@
 from base64 import b64encode, decodebytes
 import argparse
 import time
-from lib.lib import encrypt_aes_256_cbc_pkcs, decrypt_aes_256_cbc_pkcs, log_encrypt
+from mylib.lib import encrypt_aes_256_cbc_pkcs, decrypt_aes_256_cbc_pkcs, log_encrypt
 
 
 def main():
