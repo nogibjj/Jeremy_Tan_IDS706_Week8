@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: sleep for 20 seconds
-        run: sleep 20
+      - name: sleep for 45 seconds
+        run: sleep 45
       - name: install packages
         run: make python_install
       - name: lint

@@ -40,7 +40,7 @@ python_format:
 	black *.py 
 
 python_lint:
-	ruff check *.py mylib/*.py
+	ruff check *.py lib/*.py
 
 python_container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
@@ -58,7 +58,7 @@ generate_and_push:
 		git config --local user.email "action@github.com"; \
 		git config --local user.name "GitHub Action"; \
 		git add .; \
-		git commit -m "Add SQL log"; \
+		git commit -m "Add metric log"; \
 		git push; \
 	else \
 		echo "No changes to commit. Skipping commit and push."; \
