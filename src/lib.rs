@@ -1,3 +1,4 @@
+// Modified using https://github.com/DaGenix/rust-crypto/blob/master/examples/symmetriccipher.rs
 extern crate crypto;
 extern crate rand;
 

@@ -2,11 +2,11 @@
 
 To run:
 
-cargo run --  --message "Off to the bunker. Every person for themselves" --encrypt --shift 10
+cargo run --  --message "Off to the bunker. Every person for themselves" --encrypt
 
 To decrypt:
 
-cargo run --  --message "Ypp dy dro lexuob. Ofobi zobcyx pyb drowcovfoc" --decrypt --shift 10
+cargo run --  --message "{base64 input}" --decrypt
 
 */
 #![allow(deprecated)]
