@@ -36,6 +36,6 @@ fn test_decrypt_command() {
 
     // Second Command
     let mut cmd = Command::cargo_bin("aes_cbc").unwrap();
-    cmd.args(&["--message", "P0JVe8U8gF4QCBnWnpmKlzI9DGK7Ek4Vm6iTyA0zLb+Pwx+9HLHzv1BYrNPRnGsCBEu5JiJZpBB0KOjxiTh41U2tytK9/t/4AiaXBYVXsG9Z8utU/ZzbPNb1DBTOqzGB", "--decrypt"]);
+    cmd.args(&["--message", "Q9LCh9YvaLPGcXeEMQ8bSWz2nU0FMoqYmqBl0GxX6D1MXj76zHXboHyrDMZHeiR0H2MiDekXUV1FBeZYBUivc++YYzD78RhBMfpP6lq+IttySE0ns/P/xueKX4wY3ln8sBy/b1Zrm52Lun5KqmFhZvHj7d2pwHsz7DiuK37TkHg=", "--decrypt"]);
     cmd.assert().success();
 }
