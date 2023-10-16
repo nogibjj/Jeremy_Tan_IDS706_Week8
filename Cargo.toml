@@ -1,6 +1,15 @@
 [package]
-name = "Jeremy_Tan_IDS706_WEEK8"
+name = "aes_cbc"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+libc = "^0.2"
+time = "^0.1"
+rand = "^0.3"
+rustc-serialize = "^0.3"
+rust-crypto = "^0.2"
+clap = { version = "4.3.17", features = ["derive"] }
+assert_cmd = "^2.0"
+tempdir = "0.3"
+predicates = "0.9"
