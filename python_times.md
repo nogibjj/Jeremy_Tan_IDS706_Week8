@@ -42,3 +42,11 @@ Elapsed time: 96200.04499998913 microseconds
 The orginal message to the cipher is Hello World
 The result of the encrypt is QTrbyq87yaS8jwVFpr6stw==
 Elapsed time: 50219.384999991235 microseconds
+
+The orginal message to the cipher is Gb/Ve9PhJ665clfO5DMi3g==
+The result of the decrypt is Hello World10
+Elapsed time: 183667.88999998107 microseconds
+
+The orginal message to the cipher is Hello World
+The result of the encrypt is QTrbyq87yaS8jwVFpr6stw==
+Elapsed time: 61314.89699998838 microseconds
