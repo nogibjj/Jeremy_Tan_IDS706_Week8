@@ -1,0 +1,6 @@
+[package]
+name = "Jeremy_Tan_IDS706_WEEK8"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
