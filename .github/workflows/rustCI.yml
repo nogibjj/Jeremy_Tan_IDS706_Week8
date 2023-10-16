@@ -29,6 +29,8 @@ jobs:
       run: make lint
     - name: Test
       run: make test
+    - name: pull Repository
+      run: git pull
     - name: Add rust logs
       run: make generate_and_push
     
