@@ -1,0 +1,30 @@
+name: Python CI/CD Pipeline
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: sleep for 20 seconds
+        run: sleep 20
+      - name: install packages
+        run: make python_install
+      - name: lint
+        run: make python_lint
+      - name: test
+        run: make python_test
+      - name: format
+        run: make python_format
+      - name: pull Repository
+        run: git pull
+      - name: generate_and_push
+        run: make generate_and_push
+      - name: deploy
+        run: make python_deploy
+      
