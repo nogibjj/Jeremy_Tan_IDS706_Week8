@@ -9,6 +9,12 @@ rust-version:
 format:
 	cargo fmt --quiet
 
+install:
+	# Install if needed
+	#@echo "Updating rust toolchain"
+	#rustup update stable
+	#rustup default stable
+
 lint:
 	cargo clippy --quiet
 
