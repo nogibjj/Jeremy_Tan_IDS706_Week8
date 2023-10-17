@@ -66,9 +66,13 @@ fn append_to_md_file(
 
     let mut file = std::io::BufWriter::new(file);
     let e_d = if encrypt { "encryption" } else { "decryption" };
-    writeln!(file, "\nThe orginal message to the cipher is {}", message)?;
-    writeln!(file, "The result of the {} is {}", e_d, content)?;
-    writeln!(file, "Elapsed time: {} microseconds", time)?;
+    writeln!(
+        file,
+        "\nThe orginal message to the cipher is {}\n\n",
+        message
+    )?;
+    writeln!(file, "The result of the {} is {}\n\n", e_d, content)?;
+    writeln!(file, "Elapsed time: {} microseconds\n\n", time)?;
 
     println!("Content appended to {} successfully!", file_name);
 

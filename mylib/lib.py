@@ -12,9 +12,9 @@ def log_encrypt(message, encrypt, result, time):
     cipher = "encrypt" if encrypt else "decrypt"
 
     with open(LOG_FILE, "a") as file:
-        file.write(f"\nThe orginal message to the cipher is {message}\n")
-        file.write(f"The result of the {cipher} is {result}\n")
-        file.write(f"Elapsed time: {time} microseconds\n")
+        file.write(f"\nThe orginal message to the cipher is {message}\n\n\n")
+        file.write(f"The result of the {cipher} is {result}\n\n\n")
+        file.write(f"Elapsed time: {time} microseconds\n\n\n")
 
 
 def encrypt_aes_256_cbc_pkcs(data, key, iv):

@@ -4,6 +4,12 @@ import argparse
 import time
 from mylib.lib import encrypt_aes_256_cbc_pkcs, decrypt_aes_256_cbc_pkcs, log_encrypt
 
+"""
+To run this file:
+    python main.py decrypt "Gb/Ve9PhJ665clfO5DMi3g=="     
+    python main.py encrypt "Hello World"     
+"""
+
 
 def main():
     """handles arguments"""

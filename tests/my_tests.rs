@@ -1,4 +1,3 @@
-// tests/cli_tests.rs
 #[cfg(test)]
 use assert_cmd::prelude::*;
 use std::process::Command;
