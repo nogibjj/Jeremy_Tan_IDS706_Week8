@@ -74,6 +74,8 @@ def main():
         end_time = time.perf_counter()
         elapsed_time_micros = (end_time - start_time) * 1e6
         print(f"Elapsed time: {elapsed_time_micros} microseconds")
+        memory_after = psutil.virtual_memory().used / (1024.0**2)
+        memory_used = memory_after - memory_before
 
         log_encrypt(
             args.input_text,

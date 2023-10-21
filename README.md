@@ -37,6 +37,8 @@ The Python version features a similar CLI, utilizing the argparse module for arg
 
 You can view how long it takes to encrypt and decrypt the same messages above. Based on the speed, it's obvious Rust run on average 400 times faster than Python and we can infer why the resource usage is vastly smaller than Python. Rust outperforms Python in speed primarily due to its static typing, zero-cost abstractions, and absence of a Global Interpreter Lock (GIL). Rust's strict typing allows for more efficient compilation, while its ownership system enables high-performance abstractions without sacrificing safety. Additionally, Rust manages memory directly, avoiding the overhead of Python's garbage collector. The language also offers fine-grained control over memory, enabling low-level optimizations. These factors, combined with an optimized compiler and a performance-centric standard library, contribute to Rust's reputation for speed.
 
+I also track the memory used in Rust and Python in the markdown files above. We can see that Rust barely uses memory whereas Python requires mb of memory for the same encryption and decryption to run.
+
 ## References
 * [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
 * https://github.com/DaGenix/rust-crypto/
