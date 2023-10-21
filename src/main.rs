@@ -57,6 +57,7 @@ fn append_to_md_file(
     encrypt: bool,
     content: &str,
     time: &u128,
+    mem: &u64,
 ) -> Result<()> {
     let file = OpenOptions::new()
         .write(true)
@@ -73,6 +74,7 @@ fn append_to_md_file(
     )?;
     writeln!(file, "The result of the {} is {}\n\n", e_d, content)?;
     writeln!(file, "Elapsed time: {} microseconds\n\n", time)?;
+    writeln!(file, "Memory used: {} kb\n\n", mem)?;
 
     println!("Content appended to {} successfully!", file_name);
 
@@ -83,6 +85,7 @@ fn append_to_md_file(
 fn main() {
     let args = Args::parse();
     let start_time = Instant::now();
+    let mem_info_before = sys_info::mem_info().unwrap();
 
     let key: [u8; 32] = (&args.key)
         .split(',')
@@ -105,13 +108,15 @@ fn main() {
         let encoded_string: String = encoded.to_base64(STANDARD);
         let end_time = Instant::now();
         let elapsed_time = end_time.duration_since(start_time);
-
+        let mem_info_after = sys_info::mem_info().unwrap();
+        let mem_used = mem_info_after.total - mem_info_before.total;
         match append_to_md_file(
             "rust_times.md",
             &args.message,
             args.encrypt,
             &encoded_string,
             &elapsed_time.as_micros(),
+            &mem_used,
         ) {
             Ok(_) => {}
             Err(e) => println!("Error: {:?}", e),
@@ -129,6 +134,8 @@ fn main() {
         println!("{}", decoded_string);
         let end_time = Instant::now();
         let elapsed_time = end_time.duration_since(start_time);
+        let mem_info_after = sys_info::mem_info().unwrap();
+        let mem_used = mem_info_after.total - mem_info_before.total;
 
         match append_to_md_file(
             "rust_times.md",
@@ -136,6 +143,7 @@ fn main() {
             args.encrypt,
             &decoded_string,
             &elapsed_time.as_micros(),
+            &mem_used,
         ) {
             Ok(_) => {}
             Err(e) => println!("Error: {:?}", e),

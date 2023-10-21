@@ -3,6 +3,7 @@ from base64 import b64encode, decodebytes
 import argparse
 import time
 from mylib.lib import encrypt_aes_256_cbc_pkcs, decrypt_aes_256_cbc_pkcs, log_encrypt
+import psutil
 
 """
 To run this file:
@@ -15,6 +16,8 @@ def main():
     """handles arguments"""
 
     start_time = time.perf_counter()
+    memory_before = psutil.virtual_memory().used / (1024.0**2)
+
     parser = argparse.ArgumentParser(
         description="Encrypt and decrypt text using AES-256 CBC PKCS#7"
     )
@@ -47,10 +50,17 @@ def main():
         print("Encrypted text:", b64encode(ciphertext).decode())
         end_time = time.perf_counter()
         elapsed_time_micros = (end_time - start_time) * 1e6
+        memory_after = psutil.virtual_memory().used / (1024.0**2)
+        memory_used = memory_after - memory_before
+
         print(f"Elapsed time: {elapsed_time_micros} microseconds")
 
         log_encrypt(
-            args.input_text, True, b64encode(ciphertext).decode(), elapsed_time_micros
+            args.input_text,
+            True,
+            b64encode(ciphertext).decode(),
+            elapsed_time_micros,
+            memory_used,
         )
 
     elif args.mode == "decrypt":
@@ -66,7 +76,11 @@ def main():
         print(f"Elapsed time: {elapsed_time_micros} microseconds")
 
         log_encrypt(
-            args.input_text, False, decrypted_data.decode(), elapsed_time_micros
+            args.input_text,
+            False,
+            decrypted_data.decode(),
+            elapsed_time_micros,
+            memory_used,
         )
 
 

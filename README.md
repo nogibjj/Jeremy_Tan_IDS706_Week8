@@ -6,10 +6,10 @@ The project is a command-line interface (CLI) tool implemented in both Rust and 
 ## Rust Implementation:
 The Rust version uses the aes_cbc crate for encryption and decryption. It employs the clap library for parsing command-line arguments. The CLI takes input for mode (encrypt or decrypt), the message to be encrypted or decrypted, and optional arguments for the encryption key and initialization vector (IV). It measures and logs the elapsed time for the operation and appends this information to a Markdown file.
 
-### Preparation: 
+### Preparation and Dependency Installation: 
 1. open codespaces 
 2. wait for codespaces to be built 
-3. build: `cargo build`
+3. build: `cargo build` for dependencies installation
 4. run: `cargo run --  --message "Off to the bunker. Every person for themselves" --encrypt` or use your own string
 
 ### Check Format and Test Erros: 
@@ -26,7 +26,7 @@ The Python version features a similar CLI, utilizing the argparse module for arg
 2. install: `make python_install`
 3. run: `python main.py encrypt "Hello World"` or use your own string   
 
-### Check Format and Test Erros: 
+### Check Format and Test Errors: 
 1. Format code `make python_format`
 2. Lint code `make python_lint`
 3. Test coce `make python_test`

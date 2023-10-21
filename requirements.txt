@@ -6,5 +6,6 @@ pytest-cov==4.0.0
 requests==2.26.0
 #rust based linter
 ruff==0.0.284
-# add necessary cryptographhy req
+# add necessary cryptographhy req and others
 cryptography
+psutil
