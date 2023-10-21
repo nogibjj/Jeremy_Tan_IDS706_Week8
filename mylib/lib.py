@@ -15,7 +15,7 @@ def log_encrypt(message, encrypt, result, time, memory_used):
         file.write(f"\nThe orginal message to the cipher is {message}\n\n\n")
         file.write(f"The result of the {cipher} is {result}\n\n\n")
         file.write(f"Elapsed time: {time} microseconds\n\n\n")
-        file.write(f"- Memory used: {memory_used} MB\n")
+        file.write(f"- Memory used: {memory_used} kB\n")
 
 
 def encrypt_aes_256_cbc_pkcs(data, key, iv):
